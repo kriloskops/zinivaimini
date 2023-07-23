@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/start_page.css' %}">
+</head>
+<body>
+    <script src="{% static '/javascript/jquery.js' %}" type="text/javascript"></script>
+
+    <h1 id="start-title">Zini <span class="smaller">vai</span> Mini</h1>
+    <div id="main-start-container">
+        <p class="semi-title">Tagad vari piedalīties arī no telefona!</p>
+        <button id="join-button">PIEVIENOTIES</button>
+        <p>Pieslēdzies dzīvā TV sākumā un gaidi sākumu!</p>
+    </div>
+    <div id="popup">
+        <form id="form" method="POST" action="/game/"> {% csrf_token %}
+            {{form.as_table}}
+            <button type="submit">Pieslēgties</button>
+        </form>
+    </div>
+    <img src="{% static 'images/Kopbilde.jpg' %}" id="background-start-image">
+
+    <script>
+        $("#popup").hide()
+        // let org_w = $("#popup").css("width")
+        // let org_h = $("#popup").css("height")
+        $("#join-button").on("click", function(){
+            if ($("#popup").is(":visible")){
+                return
+            }
+
+            $("#popup").css("left", "200vw")
+            $("#popup").show()
+            $("#popup").animate({left: "50%"}, 500)
+            // $("#popup").css("width", 0)
+            // $("#popup").css("height", 0)
+            // $("#popup").css("clip-path", "circle(0% at 50% 50%)") 
+            // 
+            // $({step: 0}).animate({step: 100}, {
+            //     step: function(val) {
+            //         // val equals the current step
+            //         $('#popup').css('clip-path', "circle("+val+"% at 50% 50%) ")
+            //     }
+            // });
+            //$("#popup").animate({clipPath: "circle(50% at 50% 50%)"}, 200)
+            //$("#popup").animate({width: org_w, height: org_h}, 200)
+        })
+        $('body').click(function(evt){
+            console.log()  
+            if(evt.target.id == "popup" || evt.target.id == "join-button")
+                return;
+            if($(evt.target).closest('#popup').length)
+                return;      
+            
+            $("#popup").animate({left: "200vw"}, 500, function(){
+                $("#popup").hide()
+            })    
+            
+        });
+    </script>
+</body>
+</html>

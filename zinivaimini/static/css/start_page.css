@@ -1,0 +1,110 @@
+body{
+    margin: 0;
+    height: 200vh;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#background-start-image{
+    position: fixed;
+    min-width: 100%;
+    top:0;
+    opacity: 50%;
+    z-index: -1;
+    height: 70%; 
+}
+
+#start-title{
+    position: fixed;
+    left: 50%;
+    top: 30px;
+    transform: translate(-50%);
+    word-spacing: 9999rem;
+    font-size: 80px;
+    text-align: center;
+    font-style: italic;
+    line-height: 80%;
+    opacity: 75%;
+    letter-spacing:-0.02em;
+}
+
+.smaller{
+    font-size: 50%;
+}
+
+
+#main-start-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60%;
+    background-color: white;
+    width: 100%;
+    border-radius: 30px 30px 0 0;
+    height: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.semi-title{
+    font-size:x-large;
+    margin-top: 15px;
+}
+
+#join-button{
+    padding: 12px 0;
+    width: 50%;
+}
+
+button{
+    background-color: #00DFA2;
+    border-radius: 100vmax;
+    font-size: large;
+    color: black;
+    border-width: 0;
+    padding: 12px 30px;
+}
+
+
+
+#popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 3px 3px 7px 4px gray;
+    width: 70%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    transform-origin: center center;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+#form>*{
+    margin: 20px;
+}
+
+#popup label{
+    font-size: 1.5em;
+}
+
+#popup input{
+    border-radius: 100vmin;
+    padding: 10px;
+    font-size: 1.5em;
+    width: 70%;
+    box-sizing: border-box;
+}

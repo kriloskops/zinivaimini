@@ -1,0 +1,32 @@
+<!-- <h1>Question pause screen</h1>
+<p id="correct"></p>
+<p id="score"></p>  
+<p id="message"></p> -->
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/question_pause.css' %}">
+
+<div id="main-display">
+    <h3 id="added-points">+/- punkti</h3>
+    <h1 id="correct">Pareizi</h1>
+    <h4 id="message">Tu esi atbildējis/neatbildējis ...</h4>
+</div>
+
+<div id="answer-container">
+    <div class="answer-btn answ1">
+        <p class="answer">answer</p>
+        <div class="answer-decor answ1"></div>
+    </div>
+    <div class="answer-btn answ2">
+        <p class="answer">answer</p>
+        <div class="answer-decor answ2"></div>
+    </div>
+    <div class="answer-btn answ3">
+        <p class="answer">answer</p>
+        <div class="answer-decor answ3"></div>
+    </div>
+    <div class="answer-btn answ4">
+        <p class="answer">answer</p>
+        <div class="answer-decor answ4"></div>
+    </div>
+</div>
+

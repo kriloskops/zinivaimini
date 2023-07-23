@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="112"
+   height="112"
+   viewBox="0 0 29.633333 29.633333"
+   version="1.1"
+   id="svg5941"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="loading_circle.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview5943"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="3.1725203"
+     inkscape:cx="56.106812"
+     inkscape:cy="69.030291"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="2552"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs5938" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       style="fill:none;stroke:#00dfa2;stroke-width:3.88937496;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:3.88937496,7.77874991;stroke-dashoffset:0;stroke-opacity:1"
+       id="path6477"
+       cx="14.792645"
+       cy="15.050376"
+       rx="12.847408"
+       ry="13.065999" />
+  </g>
+</svg>

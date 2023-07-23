@@ -1,0 +1,56 @@
+#content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+/* 
+    background-image: url("/static/images/background.png");
+    background-size: 100%; */
+}
+
+#content div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 70%;
+}
+
+#background{
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: -1;
+}
+
+
+#content h3{
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    font-size: xx-large;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#loading-svg{
+    /* position: absolute;
+    top: 30%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    width: 130px;
+    /* offset-anchor:calc(-50%); */
+    animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}
