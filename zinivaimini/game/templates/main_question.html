@@ -11,7 +11,8 @@
 </head>
 <body>
     <script src="{% static '/javascript/jquery.js' %}" type="text/javascript"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" crossorigin="anonymous"></script>
     <div id="header-container"></div>
     <div id="content">
         {% include 'before_game.html' %}
@@ -20,9 +21,8 @@
 
     <script>
         let current_state = "before_game"
-
-
-        let url = `ws://${window.location.host}/ws/socket-server/player/`
+        let ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
+        let url = ws_scheme + "://" + `${window.location.host}:8001/ws/socket-server/player/`
         const chatSocket = new WebSocket(url)
         
         chatSocket.onopen = (e) => {
