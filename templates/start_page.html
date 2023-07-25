@@ -68,25 +68,13 @@
             
         });
 
-        $("#main-start-container").click(function (evt) {
-            console.log("changin src")
-            $("#background-start-image").attr("src", "{% static 'images/Kopbilde.jpg' %}".replace(/&amp;/g, "&"))
-        })
+        // $("#main-start-container").click(function (evt) {
+        //     console.log("changin src")
+        //     $("#background-start-image").attr("src", "{% static 'images/Kopbilde.jpg' %}".replace(/&amp;/g, "&"))
+        // })
+        $("#background-start-image").attr("src", $("#background-start-image").attr("src").split("?")[0])
 
-        const { fetch: originalFetch } = window;
-        window.fetch = async (...args) => {
-            let [resource, config ] = args;
 
-            // request interceptor starts
-            resource = 'https://jsonplaceholder.typicode.com/todos/2';
-            console.log("somethnf is happending")
-            // request interceptor ends
-
-            const response = await originalFetch(resource, config);
-
-            // response interceptor here
-            return response;
-        };
 
     </script>
 </body>
