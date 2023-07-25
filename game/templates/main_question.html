@@ -24,7 +24,7 @@
     <script>
         let current_state = "before_game"
         let ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
-        let url = ws_scheme + "://" + `${window.location.host}:8001/ws/socket-server/player/`
+        let url = ws_scheme + "://" + `${window.location.hostname}:8001/ws/socket-server/player/`
         const chatSocket = new WebSocket(url)
         
         chatSocket.onopen = (e) => {
