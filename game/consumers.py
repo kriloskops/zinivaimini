@@ -7,6 +7,7 @@ from .models import Question, Player, Reply
 class GameConsumer(WebsocketConsumer):
     counter = 1
     def connect(self):
+        print("connection pending")
         self.accept()
         self.current_answer = None
         async_to_sync(self.channel_layer.group_add)("players", self.channel_name)
