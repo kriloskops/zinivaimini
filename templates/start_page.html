@@ -8,7 +8,7 @@
     <script>
         console.log("script")
         $("img, script").each(function (index, elem) {
-            console.log("before if1")
+            console.log(elem)
             if ($(this).attr("src").includes("digitaloceanspaces")){
                 console.log("in if 1")
                 $(this).attr("src", $(this).attr("src").split("?")[0])
