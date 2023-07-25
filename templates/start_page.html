@@ -13,13 +13,17 @@
 <body>
     <script>
         $("img script").each(function (index, elem) {
+            console.log("before if1")
             if ($(this).attr("src").includes("digitaloceanspaces")){
+                console.log("in if 1")
                 $(this).attr("src", $(this).attr("src").split("?")[0])
             }
         })
 
         $("link").each(function (index, elem) {
+            console.log("before if 2")
             if ($(this).attr("href").includes("digitaloceanspaces")){
+                console.log("in if 2")
                 $(this).attr("href", $(this).attr("href").split("?")[0])
             }
         })
