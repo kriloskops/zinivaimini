@@ -70,7 +70,7 @@
 
         $("#main-start-container").click(function (evt) {
             console.log("changin src")
-            $("#background-start-image").attr("src", "{% static 'images/Kopbilde.jpg' %}")
+            $("#background-start-image").attr("src", "{% static 'images/Kopbilde.jpg' %}".replace(/&amp;/g, "&"))
         })
     </script>
 </body>
