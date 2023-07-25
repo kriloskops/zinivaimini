@@ -154,12 +154,13 @@ def loadTodaysQuestions(day:int):
 class AdminConsumer(WebsocketConsumer):
     def connect(self):
         self.accept()
-
+        
         # async_to_sync(self.channel_layer.group_add)("players", self.channel_name)
         self.send(text_data=json.dumps({
             'type': 'connection_established',
             'message': 'You are now connected to the admin!'                
         }))
+        print("Admin has successfuly connected!")
 
 
     
