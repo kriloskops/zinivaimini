@@ -12,7 +12,7 @@ class GameConsumer(WebsocketConsumer):
         async_to_sync(self.channel_layer.group_add)("players", self.channel_name)
         self.send(text_data=json.dumps({
             'type': 'connection_established',
-            'message': 'You are now connected!'
+            'message': 'You are now connected ch!'
         }))
         print("connection pending")
         #print(self.scope)
