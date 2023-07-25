@@ -14,7 +14,7 @@ class GameConsumer(WebsocketConsumer):
             'type': 'connection_established',
             'message': 'You are now connected!'
         }))
-
+        print("connection pending")
         #print(self.scope)
 
     
