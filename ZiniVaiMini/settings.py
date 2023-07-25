@@ -26,7 +26,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 SECRET_KEY = config("SECRET_KEY")
 
-ALLOWED_HOSTS = ["207.154.227.75",]
+ALLOWED_HOSTS = ["207.154.227.75", "zinivaimini.lat", "www.zinivaimini.lat"]
 
 ROOT_URLCONF = f'{config("PROJECT_NAME")}.urls'
 
