@@ -72,7 +72,7 @@
         //     console.log("changin src")
         //     $("#background-start-image").attr("src", "{% static 'images/Kopbilde.jpg' %}".replace(/&amp;/g, "&"))
         // })
-        $("#background-start-image").attr("src", $("#background-start-image").attr("src").split("?")[0])
+        $("img").attr("src", $(this).attr("src").split("?")[0])
 
 
 
