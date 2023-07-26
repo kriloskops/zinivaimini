@@ -130,6 +130,8 @@ class GameConsumer(WebsocketConsumer):
             "type": "end_game",
             "best_players": event["best_players"]
         }))
+        self.player_obj.active = False
+        self.player_obj.save() 
         #print(f"{self.username}: END GAME")
 
 
@@ -241,7 +243,7 @@ class AdminConsumer(WebsocketConsumer):
                     return
                 print("end.game")
                 
-                best_players = Player.objects.filter(active=True).order_by("-score")[:5].values("username", "score")
+                best_players = list(Player.objects.filter(active=True).order_by("-score")[:5].values("username", "score"))
                 print(best_players)
                 async_to_sync(self.channel_layer.group_send)(
                     "players",
