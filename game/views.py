@@ -11,7 +11,7 @@ def question_page_view(request):
         return redirect("/")
 
     name = form.cleaned_data["username"]
-    if (Player.objects.filter(username=data).count() == 0):
+    if (Player.objects.filter(username=name).count() == 0):
         print("creating")
         Player.objects.create(username=name)
     
