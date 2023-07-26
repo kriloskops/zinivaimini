@@ -12,7 +12,7 @@ admin.site.register(Player)
 class QuestionAdmin(admin.ModelAdmin):
     list_display = ('question', "day", "order_num")
     ordering = ("-day", "-order_num")
-    list_filter = ("day")
+    list_filter = ("day",)
 
 @admin.register(Reply)
 class ReplyAdmin(admin.ModelAdmin):
