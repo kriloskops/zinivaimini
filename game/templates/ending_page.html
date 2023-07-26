@@ -2,6 +2,28 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/end_game.css' %}">
 <h1 style="white-space: pre-line">Paldies par \n spēlēšanu!</h1>
+<style>
+    h1{
+    text-align: center;
+    }
+
+    #content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #best-players-container{
+        background-color: white;
+        border-radius: 10px;
+        border: solid #00DFA2 4px;
+    }
+
+    #best-players-container h3{
+        text-align: center;
+    }
+
+</style>
 <div id="best-players-container">
     <h3>Labākie spēlētāji</h3>
     <ol id="player-list"></ol>
