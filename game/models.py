@@ -7,7 +7,7 @@ from django.db import models
 class Player(models.Model):
     username = models.CharField(max_length=30, unique=True)
     score = models.IntegerField(default=0)
-    
+    active = models.BooleanField(default=0)
     def __str__(self):
         return self.username
 

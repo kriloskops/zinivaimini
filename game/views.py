@@ -11,8 +11,9 @@ def question_page_view(request):
         return redirect("/")
 
     name = form.cleaned_data["username"]
-    print("creating")
-    Player.objects.create(username=name)
+    if (Player.objects.filter(username=data).count() == 0):
+        print("creating")
+        Player.objects.create(username=name)
     
     context = {"username": name}
     return render(request, "main_question.html", context)

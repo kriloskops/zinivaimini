@@ -6,8 +6,8 @@ from .models import Question, Player, Reply
 
 class GameConsumer(WebsocketConsumer):
     counter = 1
+    player_points = {}
     def connect(self):
-        print("connection pending")
         self.accept()
         self.current_answer = None
         async_to_sync(self.channel_layer.group_add)("players", self.channel_name)
@@ -15,7 +15,6 @@ class GameConsumer(WebsocketConsumer):
             'type': 'connection_established',
             'message': 'You are now connected ch!'
         }))
-        print("connection pending")
         #print(self.scope)
 
     
@@ -24,6 +23,9 @@ class GameConsumer(WebsocketConsumer):
         if (data["type"] == "identify.username"):
             self.username = data["username"]
             self.player_obj = Player.objects.get(username = self.username)
+            self.player_obj.score = 0
+            self.player_obj.active = True
+            self.player_obj.save() 
             if (current_state == "game_started"):
                 self.start_game(None)
             elif (current_state == "question_time"):
@@ -134,6 +136,8 @@ class GameConsumer(WebsocketConsumer):
 
     def disconnect(self, close_code):
         async_to_sync(self.channel_layer.group_discard)("players", self.channel_name)
+        self.player_obj.active = False
+        self.player_obj.save() 
         print(f"{self.username} has disconnected!")
 
 

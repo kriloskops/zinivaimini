@@ -10,7 +10,7 @@ class NameForm(forms.Form):
         org_data = self.cleaned_data["username"]
         data = self.cleaned_data["username"]
         counter = 2
-        while (Player.objects.filter(username=data).count() > 0):
+        while (Player.objects.filter(username=data, active=True).count() > 0):
             data = f"{org_data}_{counter}"
             counter += 1
         return data
