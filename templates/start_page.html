@@ -10,8 +10,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/start_page.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"> -->
+    <style>
+        #content{
+            /* position: absolute;
+            top:0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 100%; */
+            width: 100%;
+        }
+        body{
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
 
+
+        @media (min-width: 400px) {
+            body{
+                width: 400px;
+                height: 840px;
+                border: solid rgb(238, 172, 51) 5px;
+                border-radius: 15px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+            }
+            #header-main{
+                border-radius: 15px 15px 0 0;
+
+            }
+        }
+    </style>
     <!-- <link rel="stylesheet" type="text/css" href="https://zini-vai-mini.fra1.digitaloceanspaces.com/zini-vai-mini/zini-vai-mini-static/css/start_page.css"> -->
 </head>
 <body>
