@@ -197,6 +197,10 @@
                 case "end_game":
                     console.log("end game")
                     mainDiv.innerHTML = `{% include 'ending_page.html' %}`
+                    data["best_players"].forEach(info => {
+                        let {username, score} = info
+                        $("#player-list").append(`<li>${username} - ${score}</li>`)
+                    });
                     break
 
                 

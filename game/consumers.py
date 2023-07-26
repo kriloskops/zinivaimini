@@ -6,7 +6,6 @@ from .models import Question, Player, Reply
 
 class GameConsumer(WebsocketConsumer):
     counter = 1
-    player_points = {}
     def connect(self):
         self.accept()
         self.current_answer = None
@@ -128,7 +127,8 @@ class GameConsumer(WebsocketConsumer):
 
     def end_game(self, event):
         self.send(text_data=json.dumps({
-            "type": "end_game"
+            "type": "end_game",
+            "best_players": event["best_players"]
         }))
         #print(f"{self.username}: END GAME")
 
@@ -240,10 +240,14 @@ class AdminConsumer(WebsocketConsumer):
                     self.send_error("The game isn't even started!")
                     return
                 print("end.game")
+                
+                best_players = Player.objects.filter(active=True).order_by("-score")[:5].values("username", "score")
+
                 async_to_sync(self.channel_layer.group_send)(
                     "players",
                     {
-                        "type": "end_game"
+                        "type": "end_game",
+                        "best_players": best_players
                     }
                 )
                 current_state = "before_game"
