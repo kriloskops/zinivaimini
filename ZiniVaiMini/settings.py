@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'game'
+    'game',
+    'storages'
 ]
 CHANNEL_LAYERS = {
     'default':{
