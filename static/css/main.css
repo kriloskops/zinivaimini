@@ -14,7 +14,7 @@ body{
 }
 
 
-@media (min-width: 400px) {
+@media (min-width: 435px) {
     body{
         width: 400px;
         height: 840px;
